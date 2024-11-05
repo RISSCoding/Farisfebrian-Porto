@@ -15,7 +15,7 @@ export const ContactSection = () => {
               </div>
               <div className="bg-custom-dark ml-36 w-[40vh] h-[11vh] mt-24 rounded-3xl ">
                 <div className="text-white font-bold flex ml-[8vh] mt-[1rem] text-2xl ">
-                <a href='mailto:farisfebrian@gmail.com'>Contact me</a>
+                <a href='mailto:farisfebrian0602@gmail.com'>Contact me</a>
                   <img src={ArrowUp} className="ml-[2vh] mt-[1vh]" />
                 </div>
               </div>
