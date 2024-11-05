@@ -1,10 +1,22 @@
+import React, { useEffect, useState } from 'react';
 import Lenis from '@studio-freight/lenis';
-import { useEffect } from 'react';
 import gsap from 'gsap';
 import Home from './sections/Home';
+import Preloader from './components/Preloader';
 import './App.css';
 
 const App: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Timer untuk menghilangkan preloader setelah 7 detik
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 2,
@@ -64,8 +76,12 @@ const App: React.FC = () => {
   return (
     <div>
       <div className="custom-cursor"></div>
-      
-      <Home />
+
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <Home />
+      )}
     </div>
   );
 };

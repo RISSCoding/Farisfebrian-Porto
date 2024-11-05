@@ -10,7 +10,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ scrollToHero, scrollToProjects, scrollToContact }) => {
   const [activeSection, setActiveSection] = useState<string>('home');
-
   const handleSectionClick = (section: string, scrollTo: () => void) => {
     setActiveSection(section);
     scrollTo();
