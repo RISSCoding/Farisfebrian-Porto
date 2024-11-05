@@ -6,6 +6,7 @@ import { ContactSection } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { CVButton } from '@/components/CVButton';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -48,6 +49,7 @@ export default function Home() {
 
   return (
     <div>
+      <CVButton />
       <Header
         scrollToHero={scrollToHero}
         scrollToContact={scrollToContact}

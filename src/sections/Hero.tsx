@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
   return (
-    <div className="mb-[50vh]">
+    <div className="mb-[15vh]">
       <div className="mt-20 text-white mx-[5vh] md:mx-[125px] lg:mx-[5vh] xl:mx-[10vh] h-auto flex flex-col lg:flex-row">
         <div 
           className="w-[200px] h-[300px] sm:w-[250px] sm:h-[350px] md:w-[500px] md:h-[400px] lg:w-[250px] lg:h-[445px] rounded-[30px] sm:rounded-[45px] bg-cover bg-center mb-5 lg:mb-0"
