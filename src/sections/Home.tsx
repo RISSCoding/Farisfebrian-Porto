@@ -19,7 +19,7 @@ const smoothScrollTo = (target: HTMLElement, duration: number) => {
 };
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [, setActiveSection] = useState<string>('home');
   const heroRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ export default function Home() {
         scrollToHero={scrollToHero}
         scrollToContact={scrollToContact}
         scrollToProjects={scrollToProjects}
-        activeSection={activeSection} // Pass activeSection to Header
+         // Pass activeSection to Header
       />
       <div ref={heroRef} id="home">
         <HeroSection scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} />
