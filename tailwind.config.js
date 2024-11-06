@@ -31,7 +31,7 @@ module.exports = {
         'md': '768px',  // Medium screens
         'lg': '1024px', // Large screens
         'xl': '1440px', // Extra large screens
-        '2xl': '1536px', // Extra extra large screens
+        '2xl': '2560px', // Extra extra large screens
       },
       height: {
         'screen': '100vh', // Optional: for full height

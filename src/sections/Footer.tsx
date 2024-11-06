@@ -32,8 +32,8 @@ export const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props) =>
 
   return (
     <footer className="relative overflow-x-clip" {...props}>
-      <div className=" absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-custom-green/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
-      <div className="container ml-32">
+      <div className=" absolute h-[400px] w-full bottom-0 left-1/2 -translate-x-1/2 bg-custom-green/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
+      <div className="container lg:ml-36 2xl:w-[200vh] 2xl:ml-[16vh] xl:w-[100vh] xl:ml-[19vh]">
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8 ">
           <div className="text-white/40">&copy;RISSCoding 2024. All rights reserved</div>
           <nav className="flex flex-col md:flex-row items-center gap-8">

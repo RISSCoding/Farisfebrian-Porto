@@ -18,10 +18,9 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div className="flex justify-center items-center mx-[75vh] rounded-3xl fixed top-5 z-20 p-1 bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark">
+    <div className="flex flex-col sm:flex-row justify-center items-center mx-4 sm:mx-[75vh] rounded-3xl fixed top-5 z-20 p-1 bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark">
       {/* Logo or other header content */}
-      <div className="flex space-x-5 mr-7
-       rounded-3xl font-bold">
+      <div className="flex space-x-0 sm:space-x-5 sm:mr-7 rounded-3xl font-bold">
         <a
           onClick={() => scrollToHero()}
           className={`nav-item ${activeSection === 'home' ? 'bg-[#D8F247] text-[#030C18]' : 'text-[#D8F247]'} p-2 rounded-3xl`}
@@ -45,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* CV Button */}
       <div
         onClick={handleClickCV}
-        className="flex justify-center items-center px-10 py-2 rounded-3xl bg-custom-gray border border-custom-green/15 cursor-pointer font-bold text-center"
+        className="flex justify-center items-center px-5 sm:px-10 py-2 mt-2 sm:mt-0 rounded-3xl bg-custom-gray border border-custom-green/15 cursor-pointer font-bold text-center sm:block"
       >
         CV
       </div>
