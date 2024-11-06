@@ -1,22 +1,28 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 interface HeaderProps {
   scrollToHero: () => void;
   scrollToProjects: () => void;
   scrollToContact: () => void;
+  activeSection: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ scrollToHero, scrollToProjects, scrollToContact }) => {
-  const [activeSection, setActiveSection] = useState<string>('home');
+export const Header: React.FC<HeaderProps> = ({
+  scrollToHero,
+  scrollToProjects,
+  scrollToContact,
+  activeSection
+}) => {
   const handleSectionClick = (section: string, scrollTo: () => void) => {
-    setActiveSection(section);
     scrollTo();
   };
 
   return (
-    <div className="flex left-[80vh] fixed top-3 w-full z-10">
+    <div
+      className='flex left-[80vh] fixed top-3  z-10 '
+    >
       <nav className="flex gap-3 p-0.5 border border-custom-gray/15 rounded-3xl bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark shadow-2xl">
         <a
           onClick={() => handleSectionClick('home', scrollToHero)}

@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/sections/Hero';
-import { ProjectsSection } from '@/sections/Projects';
 import { ContactSection } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { CVButton } from '@/components/CVButton';
+import ProjectsSection from './Projects';
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -19,22 +19,24 @@ const smoothScrollTo = (target: HTMLElement, duration: number) => {
 };
 
 export default function Home() {
-  const [, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>('home');
   const heroRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null); // Add this line if you need the About section
 
   const sections = [
     { id: 'home', ref: heroRef, name: 'home' },
     { id: 'projects', ref: projectsRef, name: 'projects' },
-    { id: 'contact', ref: contactRef, name: 'contact' },
-    { id: 'about', ref: aboutRef, name: 'about' } // Add this if About section is needed
+    { id: 'contact', ref: contactRef, name: 'contact' }
   ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => entries.forEach(entry => entry.isIntersecting && setActiveSection(entry.target.id)),
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      }),
       { root: null, rootMargin: '0px', threshold: 0.1 }
     );
 
@@ -46,7 +48,6 @@ export default function Home() {
   const scrollToContact = () => contactRef.current && smoothScrollTo(contactRef.current, 1500);
   const scrollToProjects = () => projectsRef.current && smoothScrollTo(projectsRef.current, 1500);
 
-
   return (
     <div>
       <CVButton />
@@ -54,6 +55,7 @@ export default function Home() {
         scrollToHero={scrollToHero}
         scrollToContact={scrollToContact}
         scrollToProjects={scrollToProjects}
+        activeSection={activeSection} // Pass activeSection to Header
       />
       <div ref={heroRef} id="home">
         <HeroSection scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} />
