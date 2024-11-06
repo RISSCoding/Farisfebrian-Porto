@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from '@/assets/icons/arrow-up-right-white.svg';
+import Arrow from '@/assets/icons/arrow-up-right-lime.svg';
 
 interface FooterLink {
   title: string;

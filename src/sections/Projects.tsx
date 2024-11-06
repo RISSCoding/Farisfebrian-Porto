@@ -35,12 +35,12 @@ const ProjectsSection: React.FC = () => {
     <section id="projects" className="container mx-auto p-6 mb-[16vh]">
       <div className="flex justify-center">
         <p className="uppercase font-bold tracking-widest bg-gradient-to-r from-custom-green to-custom-gray text-center bg-clip-text text-transparent">
-        what have i done?
+          what have i done?
         </p>
       </div>
       <h2 className="font-bold text-3xl md:text-5xl text-center text-white mt-6">Past Projects</h2>
       <p className="text-center md:text-lg text-white/60 mt-4 max-w-md mx-auto lg:text-xl mb-[6vh]">
-      Discover how I bring my concepts to life through dynamic websites.
+        Discover how I bring my concepts to life through dynamic websites.
       </p>
       
       {loading && <p className="text-center text-lg">Loading...</p>}
@@ -48,40 +48,39 @@ const ProjectsSection: React.FC = () => {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
         {repos.map((repo) => (
-          <div
+          <a
             key={repo.name}
-            className="bg-gray-800 text-white p-4 rounded-3xl shadow-lg hover:bg-gray-700 transition-colors"
+            href={repo.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800 text-white p-4 rounded-3xl shadow-lg hover:shadow-[0_0_15px_2px_#D8F247] hover:scale-105 transition-all transform hover:bg-custom-green/15 hover:z-10"
           >
-            <h3 className="text-xl font-semibold">{repo.name}</h3>
-            <p className="text-gray-400">{repo.description}</p>
-            
-            <div className="flex items-center mt-2">
-              <span
-                className="w-4 h-4 rounded-full mr-2"
-                style={{ backgroundColor: repo.languageColor }}
-              ></span>
-              <p className="text-sm text-white">
-                {repo.language}
-              </p>
+            <div>
+              <h3 className="text-xl font-semibold">{repo.name}</h3>
+              <p className="text-gray-400">{repo.description}</p>
+              
+              <div className="flex items-center mt-2">
+                <span
+                  className="w-4 h-4 rounded-full mr-2"
+                  style={{ backgroundColor: repo.languageColor }}
+                ></span>
+                <p className="text-sm">
+                  {repo.language}
+                </p>
+              </div>
+      
+              <div className="flex justify-between items-center mt-4">
+                <span className="text-white hover:text-custom-dark">{repo.stars} ⭐</span>
+                <span className="bg-clip-text bg-gradient-to-r from-custom-green to-custom-gray text-transparent hover:underline text-white">
+                  View on GitHub
+                </span>
+              </div>
             </div>
-  
-            <div className="flex justify-between items-center mt-4">
-              <span className="text-yellow-400">{repo.stars} ⭐</span>
-              <a
-                href={repo.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-clip-text bg-gradient-to-r from-custom-green to-custom-gray text-transparent hover:underline"
-              >
-                View on GitHub
-              </a>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
   );
-  
 };
 
 export default ProjectsSection;

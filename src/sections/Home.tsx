@@ -4,8 +4,8 @@ import { HeroSection } from '@/sections/Hero';
 import { ContactSection } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import gsap from 'gsap';
+
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import { CVButton } from '@/components/CVButton';
 import ProjectsSection from './Projects';
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -19,7 +19,7 @@ const smoothScrollTo = (target: HTMLElement, duration: number) => {
 };
 
 export default function Home() {
-  const [, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>('home');
   const heroRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -50,12 +50,11 @@ export default function Home() {
 
   return (
     <div>
-      <CVButton />
       <Header
         scrollToHero={scrollToHero}
         scrollToContact={scrollToContact}
         scrollToProjects={scrollToProjects}
-         // Pass activeSection to Header
+        activeSection={activeSection} // Pass activeSection to Header
       />
       <div ref={heroRef} id="home">
         <HeroSection scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} />
