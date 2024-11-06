@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center mx-4 sm:mx-[75vh] rounded-3xl fixed top-5 z-20 p-1 bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark">
+    <div className="flex flex-row sm:flex-row justify-center items-center mx-4 sm:mx-[75vh] rounded-3xl fixed top-5 z-20 p-1 bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark">
       {/* Logo or other header content */}
       <div className="flex space-x-0 sm:space-x-5 sm:mr-7 rounded-3xl font-bold">
         <a
