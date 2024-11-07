@@ -11,36 +11,32 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #D8F247; /* custom-green dari konfigurasi Tailwind */
+    background-color: #D8F247; 
     pointer-events: none;
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
-    z-index: 9999;
+    z-index: 9998;
     transition: width 0.2s, height 0.2s, transform 0.2s, background-color 0.2s;
   }
   
-  /* Kursor saat di atas area teks */
   .custom-cursor.highlight {
-    background-color: #B1B1B1; /* custom-gray */
+    background-color: #B1B1B1; 
   }
   
-  /* Kursor saat di-klik (akan membesar sementara) */
   .custom-cursor:active {
     transform: scale(1.5);
   }
   
-/* Mengubah warna highlight teks agar sama dengan warna kursor */
 ::selection {
-    background-color: #030C18; /* Warna highlight teks */
-    color: #FFFF; /* Warna teks yang kontras */
+    background-color: #030C18;
+    color: #FFFF;
   }
   
-  /* Untuk Firefox */
   ::-moz-selection {
-    background-color: #D8F247; /* Warna highlight teks */
-    color: #030C18; /* Warna teks yang kontras */
+    background-color: #030C18;
+    color: #FFFF;
   }
   
-  
-  
-  
+#myrisscoding {
+  z-index: 9999;
+}

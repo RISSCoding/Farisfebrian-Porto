@@ -44,14 +44,14 @@ export default function Home() {
     return () => sections.forEach(section => section.ref.current && observer.unobserve(section.ref.current));
   }, []);
 
-  const scrollToHero = () => heroRef.current && smoothScrollTo(heroRef.current, 1500);
+  const scrollToHome = () => heroRef.current && smoothScrollTo(heroRef.current, 1500);
   const scrollToContact = () => contactRef.current && smoothScrollTo(contactRef.current, 1500);
   const scrollToProjects = () => projectsRef.current && smoothScrollTo(projectsRef.current, 1500);
 
   return (
     <div>
       <Header
-        scrollToHero={scrollToHero}
+        scrollToHome={scrollToHome}
         scrollToContact={scrollToContact}
         scrollToProjects={scrollToProjects}
         activeSection={activeSection} // Pass activeSection to Header

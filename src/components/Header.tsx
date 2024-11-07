@@ -1,53 +1,54 @@
+// src/components/Header.tsx
+
 import React from 'react';
 
 interface HeaderProps {
-  scrollToHero: () => void;
+  scrollToHome: () => void;
   scrollToProjects: () => void;
   scrollToContact: () => void;
   activeSection: string;
 }
 
+const handleClickCV = () => {
+  window.open("https://drive.google.com/file/d/1eXbVnuGA_UNg4hdgSuTTSS0hYpkX0t72/view?usp=sharing", "_blank");
+};
+
 export const Header: React.FC<HeaderProps> = ({
-  scrollToHero,
+  scrollToHome,
   scrollToProjects,
   scrollToContact,
-  activeSection
+  activeSection,
 }) => {
-  const handleClickCV = () => {
-    window.open("https://drive.google.com/file/d/1eXbVnuGA_UNg4hdgSuTTSS0hYpkX0t72/view?usp=sharing", "_blank");
-  };
-
   return (
-    <div className="flex flex-row sm:flex-row justify-center items-center mx-4 sm:mx-[75vh] rounded-3xl fixed top-5 z-20 p-1 bg-gradient-to-r from-custom-green/10 to-custom-gray/10 backdrop-blur shadow-custom-dark">
-      {/* Logo or other header content */}
-      <div className="flex space-x-0 sm:space-x-5 sm:mr-7 rounded-3xl font-bold">
+    <div className="flex justify-center items-center fixed top-3 w-full z-[9999]">
+      <nav className="flex gap-1 p-0.5 border border-custom-green/15 rounded-full bg-custom-gray/10 backdrop-blur">
         <a
-          onClick={() => scrollToHero()}
-          className={`nav-item ${activeSection === 'home' ? 'bg-[#D8F247] text-[#030C18]' : 'text-[#D8F247]'} p-2 rounded-3xl`}
+          onClick={scrollToHome}
+          className={`nav-item ${activeSection === 'home' ? 'bg-custom-green text-gray-900' : ''} text-custom-green rounded-2xl p-1 font-bold`}
         >
           Home
         </a>
         <a
-          onClick={() => scrollToProjects()}
-          className={`nav-item ${activeSection === 'projects' ? 'bg-[#D8F247] text-[#030C18]' : 'text-[#D8F247]'} p-2 rounded-3xl`}
+          onClick={scrollToProjects}
+          className={`nav-item ${activeSection === 'projects' ? 'bg-custom-green text-gray-900' : ''} text-custom-green rounded-2xl p-1 font-bold`}
         >
           Projects
         </a>
         <a
-          onClick={() => scrollToContact()}
-          className={`nav-item ${activeSection === 'contact' ? 'bg-[#D8F247] text-[#030C18]' : 'text-transparent bg-clip-text bg-gradient-to-r from-custom-green to-custom-gray'} p-2 rounded-3xl`}
+          onClick={scrollToContact}
+          className={`nav-item ${activeSection === 'contact' ? 'bg-custom-green text-gray-900' : ''} text-custom-green rounded-2xl p-1 font-bold`}
         >
           Contact
         </a>
-      </div>
-
-      {/* CV Button */}
-      <div
+        <div
         onClick={handleClickCV}
-        className="flex justify-center items-center px-5 sm:px-10 py-2 mt-2 sm:mt-0 rounded-3xl bg-custom-gray border border-custom-green/15 cursor-pointer font-bold text-center sm:block"
+        className="rounded-2xl py-1 px-7 ml-1 bg-custom-gray font-bold"
       >
         CV
       </div>
+      </nav>
     </div>
   );
 };
+
+export default Header;

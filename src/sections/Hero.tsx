@@ -1,6 +1,7 @@
 import React from "react";
 import imageSrc from '@/assets/images/faris.png'; // Adjust the path accordingly
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
+import '@/App.css'
 
 interface HeroSectionProps {
   scrollToProjects: () => void;
@@ -9,10 +10,11 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
   return (
-    <div className="mb-[16vh]">
-      <div className="mt-20 text-white mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-32 h-auto flex flex-col lg:flex-row">
+    <div className="mb-[23vh]">
+      <div className="mt-20 text-white  mx-4 sm:mx-8 md:mx-16 lg:mx-24  h-auto flex flex-col lg:flex-row 2xl:ml-[55vh] 2xl:mt-[15vh]">
         <div 
-          className="w-[200px] h-[300px] sm:w-[250px] sm:h-[350px] md:w-[500px] md:h-[400px] lg:w-[250px] lg:h-[445px] rounded-[30px] sm:rounded-[45px] bg-cover bg-center mb-5 lg:mb-0 mx-auto"
+          id= "myrisscoding"
+          className=" w-[200px] h-[300px] sm:w-[250px] sm:h-[350px] md:w-[500px] md:h-[400px] lg:w-[250px] lg:h-[445px] rounded-[30px] sm:rounded-[45px] bg-cover bg-center mb-5 lg:mb-0 "
           style={{ 
             backgroundImage: `url(${imageSrc})`, 
             backgroundPosition: 'top left',
@@ -34,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
           </div>
         </div>
 
-        <div className="lg:ml-[5px] w-full lg:w-[650px] md:w-[500px] mt-5 lg:mt-0">
+        <div className="lg:ml-[5px] w-full lg:w-[650px] md:w-[500px] mt-5 lg:mt-0 ">
           <div className="bg-custom-gray h-[200px] sm:h-[217.5px] rounded-[30px] sm:rounded-[45px] mb-5 lg:mb-[5px] p-10">
             <div className="flex flex-row mb-5">
               <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-custom-dark mr-1">Skills</h1>
