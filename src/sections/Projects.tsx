@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import the AOS CSS
 
 interface Repo {
   name: string;
@@ -7,7 +9,7 @@ interface Repo {
   stars: number;
   link: string;
   language: string;
-  languageColor: string;  // Menambahkan properti untuk warna bahasa
+  languageColor: string;
 }
 
 const ProjectsSection: React.FC = () => {
@@ -16,6 +18,13 @@ const ProjectsSection: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: 'ease-in-out', // Easing function
+      once: true, // Trigger animation once when visible
+    });
+
     // Fetch pinned repos from the backend API
     const fetchPinnedRepos = async () => {
       try {
@@ -53,6 +62,7 @@ const ProjectsSection: React.FC = () => {
             href={repo.link}
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-up" // AOS animation attribute
             className="bg-gray-800 text-white p-4 rounded-3xl shadow-lg hover:shadow-[0_0_15px_2px_#D8F247] hover:scale-105 transition-all transform hover:bg-custom-green/15 hover:z-10"
           >
             <div>

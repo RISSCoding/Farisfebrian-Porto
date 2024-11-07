@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   activeSection,
 }) => {
   return (
-    <div className="flex justify-center items-center fixed top-3 w-full z-[9999]">
+    <div className="flex justify-center items-center fixed top-3 w-full z-[30]">
       <nav className="flex gap-1 p-0.5 border border-custom-green/15 rounded-full bg-custom-gray/10 backdrop-blur">
         <a
           onClick={scrollToHome}

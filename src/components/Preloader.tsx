@@ -7,7 +7,7 @@ const Preloader: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 7000); // Durasi preloader 7 detik
+    }, 7200); // Durasi preloader 7 detik
 
     return () => clearTimeout(timer);
   }, []);
@@ -19,7 +19,7 @@ const Preloader: React.FC = () => {
       <Typewriter
         texts={[
           "The page is loading",
-          "Almmost complete",
+          "Almost complete",
           "Hi, my name is Faris",
         ]}
         typingSpeed={90}
