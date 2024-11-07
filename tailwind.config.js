@@ -30,6 +30,7 @@ module.exports = {
         'sm': '640px',  // Small screens
         'md': '768px',  // Medium screens
         'lg': '1024px', // Large screens
+        '2lg': '1920px',
         'xl': '1440px', // Extra large screens
         '2xl': '2560px', // Extra extra large screens
       },

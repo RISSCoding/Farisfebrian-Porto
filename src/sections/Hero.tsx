@@ -10,7 +10,7 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
   return (
     <div className="mb-[23vh]">
-      <div className="mt-20 text-white sm:pl-5 md:mx-32  lg:mx-24  h-auto flex flex-col lg:flex-row 2xl:ml-[55vh] 2xl:mt-[15vh]">
+      <div className="mt-20 text-white sm:pl-5 md:mx-32  lg:mx-24  h-auto flex flex-col lg:flex-row 2xl:ml-[55vh] 2xl:mt-[15vh] 2lg:ml-[20vh]">
         <div 
           id= "myrisscoding"
           className=" w-[355px] h-[400px] md:w-[500px] lg:w-[250px] lg:h-[445px] rounded-[30px] sm:rounded-[45px] bg-cover bg-center mb-5 lg:mb-0 "

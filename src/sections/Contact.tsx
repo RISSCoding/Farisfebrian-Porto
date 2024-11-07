@@ -47,9 +47,9 @@ export const ContactSection: React.FC = () => {
             <div data-aos="fade-left">
               <a
                 href="mailto:farisfebrian0602@gmail.com"
-                className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 lg:ml-96"
+                className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 lg:ml-96 2lg:ml-[50rem]"
               >
-                <span className="font-semibold">Contact me</span>
+                <span className="font-semibold uppercase">Contact me</span>
                 <img src={ArrowUpRightIcon} className="w-4 h-4" />
               </a>
             </div>
