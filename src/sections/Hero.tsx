@@ -1,5 +1,5 @@
 import React from "react";
-import imageSrc from '@/assets/images/faris.png'; // Adjust the path accordingly
+import imageSrc from '@/assets/images/faris.png';
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 
 interface HeroSectionProps {

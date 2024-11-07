@@ -7,12 +7,12 @@ const Preloader: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 7200); // Durasi preloader 7 detik
+    }, 7200);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (!showPreloader) return null; // Sembunyikan preloader setelah 7 detik
+  if (!showPreloader) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-900 text-custom-green">

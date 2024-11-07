@@ -54,7 +54,7 @@ export default function Home() {
         scrollToHome={scrollToHome}
         scrollToContact={scrollToContact}
         scrollToProjects={scrollToProjects}
-        activeSection={activeSection} // Pass activeSection to Header
+        activeSection={activeSection}
       />
       <div ref={heroRef} id="home">
         <HeroSection scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} />

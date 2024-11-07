@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import the AOS CSS
+import 'aos/dist/aos.css'; 
 
 interface Repo {
   name: string;
@@ -18,14 +18,14 @@ const ProjectsSection: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Initialize AOS
+    
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Easing function
-      once: true, // Trigger animation once when visible
+      duration: 1000, 
+      easing: 'ease-in-out', 
+      once: true,
     });
 
-    // Fetch pinned repos from the backend API
+   
     const fetchPinnedRepos = async () => {
       try {
         const response = await axios.get('https://porto-backend-two.vercel.app/api/pinned-repos');
@@ -41,7 +41,7 @@ const ProjectsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="projects" className="container mx-auto p-6 mb-[16vh]">
+    <section id="projects" className="container mx-auto p-6 mb-[10vh]">
       <div className="flex justify-center">
         <p className="uppercase font-bold tracking-widest bg-gradient-to-r from-custom-green to-custom-gray text-center bg-clip-text text-transparent">
           what have i done?
@@ -62,7 +62,7 @@ const ProjectsSection: React.FC = () => {
             href={repo.link}
             target="_blank"
             rel="noopener noreferrer"
-            data-aos="fade-up" // AOS animation attribute
+            data-aos="fade-up"
             className="bg-gray-800 text-white p-4 rounded-3xl shadow-lg hover:shadow-[0_0_15px_2px_#D8F247] hover:scale-105 transition-all transform hover:bg-custom-green/15 hover:z-10"
           >
             <div>
