@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 const handleClickCV = () => {
-  window.open("https://drive.google.com/file/d/1eXbVnuGA_UNg4hdgSuTTSS0hYpkX0t72/view?usp=sharing", "_blank");
+  window.open("https://drive.google.com/file/d/1g_3631mmBVTRC9jTxUVixr3dbWnUj00n/view?usp=sharing", "_blank");
 };
 
 export const Header: React.FC<HeaderProps> = ({
